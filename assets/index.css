@@ -9,6 +9,8 @@ body,html {
   padding: 0;
   font-family: sans-serif;
   color: white;
+  -webkit-font-smoothing: antialiased;
+
 }
 
 body header {
@@ -43,7 +45,7 @@ a:hover {
 }
 
 #projects {
-  margin-top: 24px;
+  padding: 20px;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
@@ -58,14 +60,15 @@ a:hover {
 }
 
 .project-link {
+  position: relative;
   overflow: hidden;
-}
-
-.overlay {
-
 }
 
 .thumb {
   width: 200px;
   height: 120px;
+}
+
+.overlay {
+
 }
