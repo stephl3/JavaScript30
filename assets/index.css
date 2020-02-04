@@ -188,16 +188,13 @@ a {
   position: absolute;
   height: 100%;
   width: auto;
-
 }
 
-/* .project:hover .overlay {
-  opacity: 1;
-} */
-
 .overlay {
+  position: absolute;
   width: 100%;
   height: 100%;
+  padding: 8px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -216,4 +213,5 @@ a {
   font-weight: 700;
   color: white;
   text-decoration: none;
+  line-height: 32px;
 }
