@@ -1,6 +1,9 @@
 html {
   font-size: 10px;
-  background: url(./images/background.jpg) bottom center;
+  background: url('images/background.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
 }
 
@@ -204,7 +207,10 @@ a {
   background: rgba(0,0,0,0.1);
   text-decoration: none;
   opacity: 0;
-  
+  transition: opacity .25s ease-in-out;
+  -moz-transition: opacity .25s ease-in-out;
+  -webkit-transition: opacity .25s ease-in-out;
+  -o-transition: opacity .25s ease-in-out;
 }
 
 .overlay:hover {
