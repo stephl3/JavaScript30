@@ -8,6 +8,7 @@ html {
 }
 
 body,html {
+  min-width: 568px;
   margin: 0;
   padding: 0;
   font-family: Trebuchet MS, sans-serif;
