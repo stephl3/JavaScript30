@@ -26,18 +26,19 @@ h1 {
 }
 
 h2 {
-  font-size: 24px;
+  font-size: 32px;
   margin-bottom: -4px;
 }
 
 h3 {
-  font-size: 14px;
+  font-size: 18px;
   margin-bottom: -4px;
 }
 
 a {
   color: #e2ddde;
   text-decoration: none;
+  text-shadow: 0.4px 0.4px #c7bdbf;
 }
 
 .header-link:hover {
@@ -203,6 +204,7 @@ a {
   background: rgba(0,0,0,0.1);
   text-decoration: none;
   opacity: 0;
+  
 }
 
 .overlay:hover {
