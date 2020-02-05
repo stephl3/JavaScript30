@@ -26,16 +26,19 @@ h1 {
   font-size: 48px;
   font-family: 'Courier', monospace;
   margin-bottom: -8px;
+  font-weight: 400;
 }
 
 h2 {
   font-size: 32px;
   margin-bottom: -4px;
+  font-weight: 400;
 }
 
 h3 {
   font-size: 18px;
   margin-bottom: -4px;
+  font-weight: 400;
 }
 
 a {
@@ -193,6 +196,7 @@ a {
   position: absolute;
   height: 100%;
   width: auto;
+  background: transparent;
 }
 
 .overlay {
@@ -222,5 +226,5 @@ a {
   font-weight: 700;
   color: white;
   text-decoration: none;
-  line-height: 24px;
+  line-height: 28px;
 }
