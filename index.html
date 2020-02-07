@@ -16,6 +16,14 @@
       $.get("nav.html", function(data) {
         $("#nav-placeholder").html(data);
       })
+
+      setTimeout(() => {
+        if (location.href.length < 45) {
+          const backBtn = document.getElementById('back');
+          backBtn.style.display = 'none';
+          // backBtn.style.opacity = 0;
+        }
+      }, 0);
     }
   </script>
 
