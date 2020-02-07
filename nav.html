@@ -1,10 +1,16 @@
 <head>
   <script src="https://use.fontawesome.com/releases/v5.12.1/js/all.js" data-auto-a11y="true"></script>
   <style>
-    #navbar {
+    #navbar-container {
       position: fixed;
       top: 0;
       height: 65px;
+      background-color: #efefef;
+    }
+
+    #navbar {
+      height: 100%;
+      width: 100%;
       display: flex;
       flex-direction: row;
       justify-content: space-between;
@@ -12,7 +18,7 @@
     }
   </style>
 </head>
-<body>
+<body id="navbar-container">
   <nav id="navbar">
     <div class="nav-left">
       <a href="javascript:history.back()" id="back">Go Back</a>
@@ -40,12 +46,15 @@
       function hide(ele) {
         ele.style.display = 'none';
       }
+
       function hideBackBtn() {
         if (location.href.length < 45) {
           const backBtn = document.querySelector('#back');
           hide(backBtn);
         }
       }
+
+      hideBackBtn();
     }
     
   </script>
