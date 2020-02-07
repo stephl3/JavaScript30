@@ -41,7 +41,7 @@
         ele.style.display = 'none';
       }
       function hideBackBtn() {
-        if (location.href.length === 56) {
+        if (location.href.length < 45) {
           const backBtn = document.querySelector('#back');
           hide(backBtn);
         }
