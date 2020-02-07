@@ -61,8 +61,10 @@
       }
       console.log('check');
       // setTimeout(() => {
+      console.log(`${location.href.length}`)
         if (location.href.length < 45) {
           const backBtn = document.getElementById('back');
+      console.log(`${backBtn}`)
           backBtn.style.display = 'none';
           backBtn.style.opacity = 0;
         }
