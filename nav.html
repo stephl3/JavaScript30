@@ -11,30 +11,54 @@
       align-items: center;
     }
 
-    #back {
-      font-size: 32px;
+    .nav-left {
+      margin-left: 16px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
     }
+
+    .nav-right {
+      margin-right: 16px;
+      width: 150px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-link {
+      font-family: Trebuchet MS, sans-serif;
+      font-size: 28px;
+      color: pink;
+    }
+
+    .nav-link:hover {
+      color: deeppink;
+    }
+
   </style>
 </head>
 <body>
   <nav id="navbar">
     <div class="nav-left">
-      <a href="../index.html" id="back">Go Back</a>
+      <a href="../index.html" id="back" class="nav-link">Go Back</a>
     </div>
     <div class="nav-right">
-      <a href="mailto:stephen.lee.abc@gmail.com" target="_blank">
+      <a href="mailto:stephen.lee.abc@gmail.com" target="_blank" class="nav-link">
         <i class="fas fa-envelope"></i>
       </a>
-      <a href="https://stephenlee.dev/" target="_blank">
+      <a href="https://stephenlee.dev/" target="_blank" class="nav-link">
         <i class="fab fa-dev"></i>
       </a>
-      <a href="https://angel.co/mr-stephen-lee/" target="_blank">
+      <a href="https://angel.co/mr-stephen-lee/" target="_blank" class="nav-link">
         <i class="fab fa-angellist"></i>
       </a>
-      <a href="https://github.com/stephl3/" target="_blank">
+      <a href="https://github.com/stephl3/" target="_blank" class="nav-link">
         <i class="fab fa-github"></i>
       </a>
-      <a href="https://www.linkedin.com/in/mr-stephen-lee/" target="_blank">
+      <a href="https://www.linkedin.com/in/mr-stephen-lee/" target="_blank" class="nav-link">
         <i class="fab fa-linkedin-in"></i>
       </a>            
     </div>
