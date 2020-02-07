@@ -53,7 +53,11 @@
           hide(backBtn);
         }
       }
-
+      if (location.href.length < 45) {
+        const backBtn = document.querySelector('#back');
+        backBtn.style.display = 'none';
+        backBtn.style.opacity = 0;
+      }
       hideBackBtn();
     }
     
