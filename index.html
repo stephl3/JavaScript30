@@ -348,5 +348,15 @@
     <span>&nbsp;&#8226;&nbsp;</span>
     <span class="footer-link"><a href="https://angel.co/mr-stephen-lee/" target="_blank">AngelList</a></span>
   </footer>
+
+  <script>
+    setTimeout(() => {
+        if (location.href.length < 45) {
+          const backBtn = document.getElementById('back');
+          backBtn.style.display = 'none';
+          // backBtn.style.opacity = 0;
+        }
+      }, 1000);
+  </script>
 </body>
 </html>
