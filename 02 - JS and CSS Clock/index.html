@@ -3,9 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <title>JS + CSS Clock</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
-
+    <div id="nav-placeholder"></div>
+    <script>
+      window.onload = function () {
+        $.get("../nav.html", function (data) {
+          $("#nav-placeholder").html(data);
+        })
+      }
+    </script>
 
     <div class="clock">
       <div class="clock-face">
