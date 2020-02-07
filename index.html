@@ -5,10 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>JS30 by Stephen Lee</title>
-  <link rel="stylesheet" href="./assets/index.css">
   <link rel="icon" href="favicon-JS3.ico">
+  <link rel="stylesheet" href="./assets/index.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
+  <div id="nav-placeholder"></div>
+  <script>
+    window.onload = function() {
+      $.get("nav.html", function(data) {
+        $("#nav-placeholder").html(data);
+      })
+    }
+  </script>
+
   <header>
     <h1><a href="https://javascript30.com/" target="_blank" class="header-link">JavaScript30</a></h1>
     <h2>30 Day Vanilla JS Coding Challenge</h2>
@@ -322,11 +332,13 @@
   <footer>
     <span class="footer-link"><a href="mailto:stephen.lee.abc@gmail.com" target="_blank">Email</a></span>
     <span>&nbsp;&#8226;&nbsp;</span>
-    <span class="footer-link"><a href="https://angel.co/mr-stephen-lee/" target="_blank">AngelList</a></span>
+    <span class="footer-link"><a href="https://stephenlee.dev/" target="_blank">Portfolio</a></span>
+    <span>&nbsp;&#8226;&nbsp;</span>
+    <span class="footer-link"><a href="https://www.linkedin.com/in/mr-stephen-lee/" target="_blank">LinkedIn</a></span>
     <span>&nbsp;&#8226;&nbsp;</span>
     <span class="footer-link"><a href="https://github.com/stephl3/" target="_blank">Github</a></span>
     <span>&nbsp;&#8226;&nbsp;</span>
-    <span class="footer-link"><a href="https://www.linkedin.com/in/mr-stephen-lee/" target="_blank">LinkedIn</a></span>
+    <span class="footer-link"><a href="https://angel.co/mr-stephen-lee/" target="_blank">AngelList</a></span>
   </footer>
 </body>
 </html>

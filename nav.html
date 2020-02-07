@@ -1,12 +1,51 @@
-
-<nav>
-  <div class="nav-left">
-    <a href="/" class="home">Home</a>
-  </div>
-  <div class="nav-right">
-    <a href="/about.html">About</a>
-    <a href="/services.html">Services</a>
-    <a href="/pricing.html">Pricing</a>
-    <a href="/contact.html">Contact Us</a>
-  </div>
-</nav>
+<head>
+  <script src="https://use.fontawesome.com/releases/v5.12.1/js/all.js" data-auto-a11y="true"></script>
+  <style>
+    body {
+      position: fixed;
+      top: 0;
+      height: 65px;
+    }
+    nav {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-left">
+      <a href="javascript:history.back()" id="back">Go Back</a>
+    </div>
+    <div class="nav-right">
+      <a href="mailto:stephen.lee.abc@gmail.com" target="_blank">
+        <i class="fas fa-envelope"></i>
+      </a>
+      <a href="https://stephenlee.dev/" target="_blank">
+        <i class="fab fa-dev"></i>
+      </a>
+      <a href="https://angel.co/mr-stephen-lee/" target="_blank">
+        <i class="fab fa-angellist"></i>
+      </a>
+      <a href="https://github.com/stephl3/" target="_blank">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/mr-stephen-lee/" target="_blank">
+        <i class="fab fa-linkedin-in"></i>
+      </a>            
+    </div>
+  </nav>
+  <script>
+    function hide(ele) {
+      ele.style.display = 'none';
+    }
+    function hideBackBtn() {
+      if (location.href.length === 56) {
+        const backBtn = document.querySelector('#back');
+        hide(backBtn);
+      }
+    }
+  </script>
+</body>
