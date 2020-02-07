@@ -1,5 +1,6 @@
 <head>
   <script src="https://use.fontawesome.com/releases/v5.12.1/js/all.js" data-auto-a11y="true"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <style>
     #navbar-container {
       position: fixed;
@@ -16,12 +17,16 @@
       justify-content: space-between;
       align-items: center;
     }
+
+    #back {
+      font-size: 32px;
+    }
   </style>
 </head>
 <body id="navbar-container">
   <nav id="navbar">
     <div class="nav-left">
-      <a href="javascript:history.back()" id="back">Go Back</a>
+      <a href="./index.html" id="back">Go Back</a>
     </div>
     <div class="nav-right">
       <a href="mailto:stephen.lee.abc@gmail.com" target="_blank">
@@ -53,11 +58,15 @@
           hide(backBtn);
         }
       }
-      if (location.href.length < 45) {
-        const backBtn = document.getElementById('back');
-        backBtn.style.display = 'none';
-        backBtn.style.opacity = 0;
-      }
+      console.log('check');
+      setTimeout(() => {
+        if (location.href.length < 45) {
+          const backBtn = document.getElementById('back');
+          backBtn.style.display = 'none';
+          backBtn.style.opacity = 0;
+        }
+      }, 100);
+      
       hideBackBtn();
     }
     
