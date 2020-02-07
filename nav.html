@@ -48,8 +48,10 @@
   </nav>
   <script>
       console.log('AHHHH')
-    const backBtn = document.querySelector('#back');
-    backBtn.style.display = 'none';
+    if (location.href.length < 45) {
+      const backBtn = document.querySelector('#back');
+      backBtn.style.display = 'none';
+    }
       console.log('check');
     // window.onload = function () {
     //   function hide(ele) {
