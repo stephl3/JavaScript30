@@ -38,14 +38,17 @@
     </div>
   </nav>
   <script>
-    function hide(ele) {
-      ele.style.display = 'none';
-    }
-    function hideBackBtn() {
-      if (location.href.length === 56) {
-        const backBtn = document.querySelector('#back');
-        hide(backBtn);
+    window.onload = function () {
+      function hide(ele) {
+        ele.style.display = 'none';
+      }
+      function hideBackBtn() {
+        if (location.href.length === 56) {
+          const backBtn = document.querySelector('#back');
+          hide(backBtn);
+        }
       }
     }
+    
   </script>
 </body>
