@@ -47,7 +47,8 @@
     </div>
   </nav>
   <script>
-    window.onloadend = function () {
+    window.onload = function () {
+      console.log('AHHHH')
       function hide(ele) {
         ele.style.display = 'none';
       }
@@ -59,13 +60,13 @@
         }
       }
       console.log('check');
-      setTimeout(() => {
+      // setTimeout(() => {
         if (location.href.length < 45) {
           const backBtn = document.getElementById('back');
           backBtn.style.display = 'none';
           backBtn.style.opacity = 0;
         }
-      }, 100);
+      // }, 100);
       
       hideBackBtn();
     }

@@ -12,19 +12,12 @@
 <body>
   <div id="nav-placeholder"></div>
   <script>
-    window.onload = function() {
+    document.addEventListener('DOMContentLoaded', (e) => {
+      console.log('hoopla');
       $.get("nav.html", function(data) {
         $("#nav-placeholder").html(data);
       })
-
-      setTimeout(() => {
-        if (location.href.length < 45) {
-          const backBtn = document.getElementById('back');
-          backBtn.style.display = 'none';
-          // backBtn.style.opacity = 0;
-        }
-      }, 1000);
-    }
+    })
   </script>
 
   <header>
@@ -348,15 +341,5 @@
     <span>&nbsp;&#8226;&nbsp;</span>
     <span class="footer-link"><a href="https://angel.co/mr-stephen-lee/" target="_blank">AngelList</a></span>
   </footer>
-
-  <script>
-    setTimeout(() => {
-        if (location.href.length < 45) {
-          const backBtn = document.getElementById('back');
-          backBtn.style.display = 'none';
-          // backBtn.style.opacity = 0;
-        }
-      }, 1000);
-  </script>
 </body>
 </html>
