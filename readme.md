@@ -2,6 +2,6 @@
 
 # JavaScript30
 
-[https://stephl3.github.io/JavaScript30](Follow along here!)
+[Follow my progress here!](https://stephl3.github.io/JavaScript30)
 
-[https://JavaScript30.com](Full course available here!)
+[Full course available here!](https://JavaScript30.com)
