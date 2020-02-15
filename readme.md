@@ -1,7 +1,7 @@
-﻿![](https://javascript30.com/images/JS3-social-share.png)
+![](https://javascript30.com/images/JS3-social-share.png)
 
 # JavaScript30
 
-Starter Files + Completed solutions for the JavaScript 30 Day Challenge.
+[Follow my progress here!](https://stephl3.github.io/JavaScript30)
 
-Grab the course at [https://JavaScript30.com](https://JavaScript30.com)
+[Full course available here!](https://JavaScript30.com)
