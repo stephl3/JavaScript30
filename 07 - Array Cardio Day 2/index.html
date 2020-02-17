@@ -5,6 +5,17 @@
   <title>Array Cardio 💪💪</title>
   <link rel="icon" href="../favicon-JS3.ico">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <style>
+    html, body {
+      font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    body {
+      margin: 0;
+    }
+    #main-content {
+      padding: 24px;
+    }
+  </style>
 </head>
 <body>
   <div id="nav-placeholder" style="position:fixed; top:0; width:100%; height:65px; background-color:#efefef"></div>
@@ -15,8 +26,46 @@
       })
     }
   </script>
-
-  <p><em>Psst: have a look at the JavaScript Console</em> 💁</p>
+  <section id="main-content">
+  <h2 style="padding-top:48px">Array Cardio Day 2</h2>
+  <p>
+    <em>Use the dataset below to try solving these problems in the dev console.</em>
+  </p><br>
+  <p>
+    const people = [
+    { name: 'Wes', year: 1988 },
+    { name: 'Kait', year: 1986 },
+    { name: 'Irv', year: 1970 },
+    { name: 'Lux', year: 2015 }
+    ];<br><br>
+    
+    const comments = [
+    { text: 'Love this!', id: 523423 },
+    { text: 'Super good', id: 823423 },
+    { text: 'You are the best', id: 2039842 },
+    { text: 'Ramen is my fav food ever', id: 123523 },
+    { text: 'Nice Nice Nice!', id: 542328 }
+    ];<br><br>
+  </p>
+  <ol>
+    <li>
+      Array.prototype.some()<br>
+      Is at least one person 19 or older?
+    </li><br>
+    <li>
+      Array.prototype.every()<br>
+      Is everyone 19 or older?
+    </li><br>
+    <li>
+      Array.prototype.find()<br>
+      Find the comment with the ID of 823423.
+    </li><br>
+    <li>
+      Array.prototype.findIndex()<br>
+      Find the index of the comment with the ID of 823423. Then, delete this comment.
+    </li>
+  </ol>
+  </section>
   <script>
     // ## Array Cardio Day 2
 
@@ -26,6 +75,7 @@
       { name: 'Irv', year: 1970 },
       { name: 'Lux', year: 2015 }
     ];
+    console.log(people);
 
     const comments = [
       { text: 'Love this!', id: 523423 },
@@ -34,38 +84,38 @@
       { text: 'Ramen is my fav food ever', id: 123523 },
       { text: 'Nice Nice Nice!', id: 542328 }
     ];
+    console.log(comments);
 
-    // Some and Every Checks
-    // Array.prototype.some() // is at least one person 19 or older?
-      const someAtLeastNineteen = people.some(person =>
-        (new Date()).getFullYear() - person.year >= 19);
+    // // Some and Every Checks
+    // // Array.prototype.some() // is at least one person 19 or older?
+    //   const someAtLeastNineteen = people.some(person =>
+    //     (new Date()).getFullYear() - person.year >= 19);
 
-      console.log(someAtLeastNineteen);
+    //   console.log(someAtLeastNineteen);
 
-    // Array.prototype.every() // is everyone 19 or older?
-      const everyoneAtLeastNineteen = people.every(person =>
-        (new Date()).getFullYear() - person.year >= 19);
+    // // Array.prototype.every() // is everyone 19 or older?
+    //   const everyoneAtLeastNineteen = people.every(person =>
+    //     (new Date()).getFullYear() - person.year >= 19);
 
-      console.log(everyoneAtLeastNineteen);
+    //   console.log(everyoneAtLeastNineteen);
 
-    // Array.prototype.find()
-    // Find is like filter, but instead returns just the one you are looking for
-    // find the comment with the ID of 823423
-      const selectedComment = comments.find(comment => comment.id == 823423);
+    // // Array.prototype.find()
+    // // Find is like filter, but instead returns just the one you are looking for
+    // // find the comment with the ID of 823423
+    //   const selectedComment = comments.find(comment => comment.id == 823423);
 
-      console.log(selectedComment);
+    //   console.log(selectedComment);
 
-    // Array.prototype.findIndex()
-    // Find the comment with this ID
-      const commentIdx = comments.findIndex(comment => comment.id == 823423);
+    // // Array.prototype.findIndex()
+    // // Find the comment with this ID
+    //   const commentIdx = comments.findIndex(comment => comment.id == 823423);
 
-      console.log(commentIdx);
+    //   console.log(commentIdx);
 
-    // delete the comment with the ID of 823423
-      comments.splice(commentIdx, 1);
+    // // delete the comment with the ID of 823423
+    //   comments.splice(commentIdx, 1);
       
-      console.table(comments);
-
+    //   console.table(comments);
   </script>
 </body>
 </html>
