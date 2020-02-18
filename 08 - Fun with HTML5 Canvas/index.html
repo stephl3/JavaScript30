@@ -4,22 +4,20 @@
   <meta charset="UTF-8">
   <title>HTML5 Canvas</title>
   <link rel="icon" href="../favicon-JS3.ico">
-    <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
   <div id="nav-placeholder" style="position:fixed; top:0; width:100%; height:65px; background-color:#efefef"></div>
-  <script>
-    window.onload = function () {
-      $.get("../nav.html", function (data) {
-        $("#nav-placeholder").html(data);
-      })
-    }
-  </script>
   <section id="main-content">
     <canvas id="draw" width="800" height="800"></canvas>
   </section>
   <script>
+  window.onload = function () {
+    $.get("../nav.html", function (data) {
+      $("#nav-placeholder").html(data);
+    })
+  }
   const canvas = document.querySelector('#draw');
   const ctx = canvas.getContext('2d');
 
@@ -30,7 +28,7 @@
   ctx.lineJoin = 'round';
   ctx.lineCap = 'round';
   ctx.lineWidth = 100;
-  ctx.globalCompositeOperation = 'destination-in';
+  // ctx.globalCompositeOperation = 'luminosity';
 
   let isDrawing = false;
   let lastX = 0;
@@ -41,7 +39,7 @@
   function draw(e) {
     // only draw when mouse is clicked down
     if (!isDrawing) return;
-
+    
     ctx.strokeStyle = `hsl(${hue}, 100%, 50%)`;
     ctx.beginPath();
     ctx.moveTo(lastX, lastY);

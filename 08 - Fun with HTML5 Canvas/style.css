@@ -1,18 +1,17 @@
 html, body {
   margin: 0;
 }
+
 body {
   padding-top: 65px;
-  background: url(https://boyunderbridge.files.wordpress.com/2013/09/empty-canvas.jpg) bottom center;
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 100%;
 }
-#draw {
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
+
+#main-content {
+  background: url(https://i.redd.it/bydk2rzmxem31.jpg) bottom center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: rgba(255,255,255,0.1);
+  background-blend-mode: overlay;
+  width: 100%;
+  height: 100%;
 }
