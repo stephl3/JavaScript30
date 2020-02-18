@@ -27,7 +27,7 @@
   ctx.strokeStyle = '#BADA55';
   ctx.lineJoin = 'round';
   ctx.lineCap = 'round';
-  ctx.lineWidth = 100;
+  ctx.lineWidth = 60;
   // ctx.globalCompositeOperation = 'luminosity';
 
   let isDrawing = false;
@@ -51,7 +51,7 @@
     hue++;
     if (hue >= 360) hue = 0;
 
-    if (ctx.lineWidth >= 100 || ctx.lineWidth <= 1) {
+    if (ctx.lineWidth >= 60 || ctx.lineWidth <= 10) {
       direction = !direction;
     }
     (direction) ? ctx.lineWidth++ : ctx.lineWidth--;
