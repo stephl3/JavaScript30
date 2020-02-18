@@ -1,0 +1,18 @@
+html, body {
+  margin: 0;
+}
+body {
+  padding-top: 65px;
+  background: url(https://boyunderbridge.files.wordpress.com/2013/09/empty-canvas.jpg) bottom center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 100%;
+}
+#draw {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
