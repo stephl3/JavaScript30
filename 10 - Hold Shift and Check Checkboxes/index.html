@@ -103,32 +103,32 @@
   </div>
 
 <script>
-window.onload = function () {
-  $.get("../nav.html", function (data) {
-    $("#nav-placeholder").html(data);
-  })
-}
-
-let lastChecked;
-
-function handleShiftClick(e) {
-  let inBetween = false;
-  if (e.shiftKey && this.checked) {
-    checkboxes.forEach(checkbox => {
-      if (checkbox === this || checkbox === lastChecked) {
-        inBetween = !inBetween; 
-      }
-
-      if (inBetween) {
-        checkbox.checked = true;
-      }
-    });
+  window.onload = function () {
+    $.get("../nav.html", function (data) {
+      $("#nav-placeholder").html(data);
+    })
   }
-}
 
-const inbox = document.querySelector('.inbox');
-const checkboxes = inbox.querySelectorAll('input');
-checkboxes.forEach(checkbox => checkbox.addEventListener('click', handleShiftClick));
+  let lastChecked;
+
+  function handleShiftClick(e) {
+    let inBetween = false;
+    if (e.shiftKey && this.checked) {
+      checkboxes.forEach(checkbox => {
+        if (checkbox === this || checkbox === lastChecked) {
+          inBetween = !inBetween; 
+        }
+
+        if (inBetween) checkbox.checked = true;
+      });
+    }
+
+    lastChecked = this;
+  }
+
+  const inbox = document.querySelector('.inbox');
+  const checkboxes = inbox.querySelectorAll('input');
+  checkboxes.forEach(checkbox => checkbox.addEventListener('click', handleShiftClick));
 </script>
 </body>
 </html>
