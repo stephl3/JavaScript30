@@ -9,16 +9,9 @@
 </head>
 <body>
   <div id="nav-placeholder" style="position:fixed; top:0; width:100%; height:65px; background-color:#efefef"></div>
-  <script>
-    window.onload = function () {
-      $.get("../nav.html", function (data) {
-        $("#nav-placeholder").html(data);
-      })
-    }
-  </script>
-
+  
    <div class="player">
-     <video class="player__video viewer" src="652333414.mp4"></video>
+     <video class="player__video viewer" src="the"></video>
 
      <div class="player__controls">
        <div class="progress">
@@ -32,6 +25,12 @@
      </div>
    </div>
 
-  <script src="scripts.js"></script>
+  <script src="scripts.js">
+    window.onload = function () {
+        $.get("../nav.html", function (data) {
+          $("#nav-placeholder").html(data);
+        })
+      }
+  </script>
 </body>
 </html>
