@@ -4,20 +4,50 @@
   <meta charset="UTF-8">
   <title>Key Detection</title>
   <script type="text/javascript" src="https://www.cornify.com/js/cornify.js"></script>
-    <link rel="icon" href="../favicon-JS3.ico">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="icon" href="../favicon-JS3.ico">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+    }
+    h2 {
+      padding-top: 65px;
+      padding-left: 12px;
+      font-size: 48px;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+    span {
+      background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);   -webkit-background-clip: text;
+      color: transparent;
+    }
+  </style>
 </head>
 <body>
-  <div id="nav-placeholder" style="position:fixed; top:0; width:100%; height:65px; background-color:#efefef"></div>
-  <script>
-    window.onload = function () {
-      $.get("../nav.html", function (data) {
-        $("#nav-placeholder").html(data);
-      })
-    }
-  </script>
-
+<div id="nav-placeholder" style="position:fixed; top:0; width:100%; height:65px; background-color:#efefef"></div>
+<h2><span>Try typing "friendship"</span></h2>
 <script>
+  window.onload = function () {
+    $.get("../nav.html", function (data) {
+      $("#nav-placeholder").html(data);
+    })
+  }
+
+  const pressed = [];
+  const secretCode = 'friendship';
+  
+  window.addEventListener('keyup', e => {
+    // console.log(e.key);
+    pressed.push(e.key);
+    pressed.splice(-secretCode.length - 1, pressed.length - secretCode.length);
+
+    if (pressed.join('').includes(secretCode)) {
+      // console.log('BING BONG');
+      cornify_add();
+    }
+
+    // console.log(pressed);
+  });
+
 </script>
 </body>
 </html>
