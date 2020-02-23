@@ -8,13 +8,6 @@
 </head>
 <body>
   <div id="nav-placeholder" style="position:fixed; top:0; width:100%; height:65px; background-color:#efefef"></div>
-  <script>
-    window.onload = function () {
-      $.get("../nav.html", function (data) {
-        $("#nav-placeholder").html(data);
-      })
-    }
-  </script>
 
   <div class="site-wrap">
 
@@ -53,6 +46,11 @@
   </div>
 
   <script>
+    window.onload = function () {
+      $.get("../nav.html", function (data) {
+        $("#nav-placeholder").html(data);
+      })
+    }
     function debounce(func, wait = 20, immediate = true) {
       var timeout;
       return function() {
@@ -68,12 +66,32 @@
       };
     }
 
+    const images = document.querySelectorAll('.slide-in');
+
+    function checkSlide(e) {
+      images.forEach(image => {
+        const slideInAt = (window.scrollY + window.innerHeight) - image.height / 2;
+        const imageBottom = image.offsetTop + image.height;
+
+        const isHalfShown = slideInAt > image.offsetTop;
+        const isNotScrolledPast = window.scrollY < imageBottom;
+        
+        if (isHalfShown && isNotScrolledPast) {
+          image.classList.add('active');
+        } else {
+          image.classList.remove('active');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', debounce(checkSlide));
+
   </script>
 
   <style>
     html {
       box-sizing: border-box;
-      background: #ffc600;
+      background: #6a4acc;
       font-family: 'helvetica neue';
       font-size: 20px;
       font-weight: 200;
