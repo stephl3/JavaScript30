@@ -13,6 +13,12 @@
       #main-content {
         padding: 65px 12px;
       }
+      ul {
+        list-style-type: none;
+      }
+      .wrong {
+        text-decoration: line-through;
+      }
     </style>
 </head>
 <body>
@@ -22,7 +28,7 @@
       <h2>Copy Array</h2>
       <h4>const players = ['Olaf', 'Elise', 'Lee', 'Poppy'];</h4>
       <ul>
-        <li>const team = players</li>
+        <li class="wrong">const team = players</li>
         <li>const team2 = players.slice();</li>
         <li>const team3 = [].concat(players);</li>
         <li>const team4 = [...players];</li>
@@ -31,16 +37,24 @@
     </p>
     <p>
       <h2>Copy Object</h2>
-      h4
-      <ul></ul>
+      <h4>const person = {<br>
+        &ensp;name: 'Bruce Banner',<br>
+        &ensp;age: 48<br>
+      };</h4>
+      <ul>
+        <li class="wrong">const clone = person;</li>
+        <li>const clone2 = Object.assign({}, person);</li>
+        <li>const clone3 = {...person};</li>
+        <li>const clone4 = JSON.parse(JSON.stringify(person));</li>
+      </ul>
     </p>
   </section>
   <script>
-    window.onload = function () {
-      $.get("../nav.html", function (data) {
-        $("#nav-placeholder").html(data);
-      })
-    }
+    // window.onload = function () {
+    //   $.get("../nav.html", function (data) {
+    //     $("#nav-placeholder").html(data);
+    //   })
+    // }
 
     // start with strings, numbers and booleans
     let age = 10;
