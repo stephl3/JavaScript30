@@ -40,10 +40,11 @@
       $("#nav-placeholder").html(data);
     })
   }
-
+  // DOM elements
   const addItems = document.querySelector('.add-items');
   const itemsList = document.querySelector('.plates');
-  const items = [];
+  // pull local storage objects or load empty list
+  const items = JSON.parse(localStorage.getItem('items')) || [];
 
   function addItem(e) {
     // don't bubble up
@@ -59,6 +60,8 @@
     // add to items list
     items.push(item);
     populateList(items, itemsList);
+    //add to local storage
+    localStorage.setItem('items', JSON.stringify(items));
     // clear item name field
     this.reset();
   }
@@ -75,7 +78,19 @@
     }).join('');
   }
 
+  function toggleDone(e) {
+    // skip unless input or label is clicked
+    if (!e.target.matches('input')) return;
+    const ele = e.target;
+    const index = ele.dataset.index;
+    items[index].done = !items[index].done;
+    localStorage.setItem('items', JSON.stringify(items));
+    populateList(items, itemsList);
+  }
+
   addItems.addEventListener('submit', addItem);
+  itemsList.addEventListener('click', toggleDone);
+  populateList(items, itemsList);
 </script>
 
 
