@@ -10,9 +10,9 @@ html {
   font-family: Futura,"Trebuchet MS",Arial,sans-serif;
 }
 
-/* *, *:before, *:after {
+#main-content *, #main-content *:before, #main-content *:after {
   box-sizing: inherit; 
-} */
+}
 
 body {
   margin: 0;
@@ -27,7 +27,7 @@ body {
   align-items: center;
 }
 
-svg {
+#main-content svg {
   fill:white;
   background: rgba(0,0,0,0.1);
   padding: 20px;
