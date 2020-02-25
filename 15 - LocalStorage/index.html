@@ -46,7 +46,33 @@
   const items = [];
 
   function addItem(e) {
-    console.log(e);
+    // don't bubble up
+    e.preventDefault();
+    // grab item name
+    const text = (this.querySelector('[name=item]')).value;
+    // create new item obj
+    const item = {
+      text,
+      done: false
+    }
+    
+    // add to items list
+    items.push(item);
+    populateList(items, itemsList);
+    // clear item name field
+    this.reset();
+  }
+
+  function populateList(plates = [], platesList) {
+    platesList.innerHTML = plates.map((plate, idx) => {
+      let checked = (plate.done) ? 'checked' : '';
+      return (`
+        <li>
+          <input type="checkbox" data-index=${idx} id="item${idx}" ${checked} />
+          <label for="item${idx}">${plate.text}</label>
+        </li>
+      `);
+    }).join('');
   }
 
   addItems.addEventListener('submit', addItem);
