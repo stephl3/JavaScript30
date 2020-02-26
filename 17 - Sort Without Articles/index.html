@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Sort Without Articles</title>
+  <link rel="icon" href="../favicon-JS3.ico">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
 
@@ -42,10 +44,16 @@
     }
 
   </style>
+  <div id="nav-placeholder" style="position:fixed; top:0; left:0; width:100%; height:65px; background-color:#efefef"></div>
 
   <ul id="bands"></ul>
 
 <script>
+window.onload = function () {
+  $.get("../nav.html", function (data) {
+    $("#nav-placeholder").html(data);
+  })
+}
 const bands = ['The Plot in You', 'The Devil Wears Prada', 'Pierce the Veil', 'Norma Jean', 'The Bled', 'Say Anything', 'The Midway State', 'We Came as Romans', 'Counterparts', 'Oh, Sleeper', 'A Skylit Drive', 'Anywhere But Here', 'An Old Dog'];
 
 
