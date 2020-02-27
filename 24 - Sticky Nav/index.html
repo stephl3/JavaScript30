@@ -4,9 +4,12 @@
   <meta charset="UTF-8">
   <title>Sticky Nav</title>
   <link rel="stylesheet" href="style-START.css">
+  <link rel="icon" href="../favicon-JS3.ico">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
-
+  <div id="nav-placeholder" style="position:fixed; top:0; left:0; width:100%; height:65px; background-color:#efefef">
+  </div>
   <header>
     <h1>A story about getting lost.</h1>
   </header>
@@ -54,6 +57,11 @@
   </div>
 
 <script>
+  window.onload = function () {
+    $.get("../nav.html", function (data) {
+      $("#nav-placeholder").html(data);
+    })
+  }
 
 </script>
 

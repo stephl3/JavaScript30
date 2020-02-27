@@ -5,9 +5,12 @@
   <title>Speech Synthesis</title>
   <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="../favicon-JS3.ico">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
-
+  <div id="nav-placeholder" style="position:fixed; top:0; left:0; width:100%; height:65px; background-color:#efefef">
+  </div>
     <div class="voiceinator">
 
       <h1>The Voiceinator 5000</h1>
@@ -29,6 +32,12 @@
     </div>
 
 <script>
+  window.onload = function () {
+    $.get("../nav.html", function (data) {
+      $("#nav-placeholder").html(data);
+    })
+  }
+  
   const msg = new SpeechSynthesisUtterance();
   let voices = [];
   const voicesDropdown = document.querySelector('[name="voice"]');

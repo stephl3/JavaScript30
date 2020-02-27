@@ -3,9 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <title>Understanding JavaScript's Capture</title>
+  <link rel="icon" href="../favicon-JS3.ico">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body class="bod">
-
+  <div id="nav-placeholder" style="position:fixed; top:0; left:0; width:100%; height:65px; background-color:#efefef">
+  </div>
   <div class="one">
     <div class="two">
       <div class="three">
@@ -42,6 +45,11 @@
 
 <button></button>
 <script>
+  window.onload = function () {
+    $.get("../nav.html", function (data) {
+      $("#nav-placeholder").html(data);
+    })
+  }
 
 </script>
 </body>
