@@ -20,10 +20,12 @@
     }
 
     #bands {
-      list-style: inside square;
+      list-style: none;
       font-size: 20px;
       background: white;
       width: 500px;
+      max-height: 600px;
+      overflow-y: scroll;
       margin: auto;
       padding: 0;
       box-shadow: 0 0 0 20px rgba(0, 0, 0, 0.05);
@@ -31,7 +33,11 @@
     
     #bands li {
       border-bottom: 1px solid #efefef;
-      padding: 20px;
+      padding: 16px;
+    }
+
+    #bands li:before {
+      content: '🎶 ';
     }
     
     #bands li:last-child {
@@ -55,7 +61,27 @@ window.onload = function () {
   })
 }
 const bands = ['The Plot in You', 'The Devil Wears Prada', 'Pierce the Veil', 'Norma Jean', 'The Bled', 'Say Anything', 'The Midway State', 'We Came as Romans', 'Counterparts', 'Oh, Sleeper', 'A Skylit Drive', 'Anywhere But Here', 'An Old Dog'];
+const articles = ['The', 'A', 'An'];
 
+function replaceArticle(bandName) {
+  return bandName.replace(/^(a |the |an )/i, '').trim();
+}
+
+// const sortedBands = bands.sort((a, b) => {
+//   let bandA = a.split(' ');
+//   let bandB = b.split(' ');
+
+//   let wordA = (articles.includes(bandA[0])) ? bandA[1] : bandA[0];
+//   let wordB = (articles.includes(bandB[0])) ? bandB[1] : bandB[0];
+//   return (wordA < wordB) ? -1 : 1;
+// })
+
+const sortedBands = bands.sort((a, b) => replaceArticle(a) < replaceArticle(b) ? -1 : 1);
+
+const bandList = document.getElementById('bands');
+bandList.innerHTML = sortedBands
+  .map(band => `<li>${band}</li>`)
+  .join('');
 
 </script>
 
