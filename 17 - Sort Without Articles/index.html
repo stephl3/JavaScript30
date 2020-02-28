@@ -77,7 +77,7 @@ function replaceArticle(bandName) {
 //   return (wordA < wordB) ? -1 : 1;
 // })
 
-const sortedBands = bands.sort((a, b) => replaceArticle(a) < replaceArticle(b) ? -1 : 1);
+const sortedBands = bands.sort((a, b) => replaceArticle(a) - replaceArticle(b)e);
 
 const bandList = document.getElementById('bands');
 bandList.innerHTML = sortedBands

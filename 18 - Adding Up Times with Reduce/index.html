@@ -5,9 +5,17 @@
   <title>Videos</title>
   <link rel="icon" href="../favicon-JS3.ico">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <style>
+    .videos {
+      margin-top: 65px;
+    }
+    
+
+  </style>
 </head>
 <body>
   <div id="nav-placeholder" style="position:fixed; top:0; left:0; width:100%; height:65px; background-color:#efefef"></div>
+  
   <ul class="videos">
     <li data-time="5:43">
       Video 1
@@ -191,6 +199,24 @@
     })
   }
   
+  const timeNodes = document.querySelectorAll('[data-time]');
+
+  const totalSeconds = Array.from(timeNodes)
+  .map(node => node.dataset.time)
+  .map(timeDuration => {
+    const [mins, secs] = timeDuration.split(':').map(parseFloat);
+    return (mins * 60) + secs;
+  })
+  .reduce((total, seconds) => total + seconds);
+
+  let secondsLeft = totalSeconds;
+
+  const hours = Math.floor(secondsLeft / 3600);
+  secondsLeft %= 3600;
+  const minutes = Math.floor(secondsLeft / 60);
+  secondsLeft %= 60;
+
+
 </script>
 </body>
 </html>
