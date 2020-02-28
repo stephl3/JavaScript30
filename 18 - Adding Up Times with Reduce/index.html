@@ -6,16 +6,33 @@
   <link rel="icon" href="../favicon-JS3.ico">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <style>
-    .videos {
+    #main-content {
       margin-top: 65px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: monospace;
+      font-size: 16px;
     }
-    
+    .videos {
+      width: 150px;
+      max-height: 600px;
+      overflow-y: scroll;
+      list-style: '👾';
+    }
+    .videos li {
+      padding: 8px;
+    }
+    #total-time {
+
+    }
 
   </style>
 </head>
 <body>
   <div id="nav-placeholder" style="position:fixed; top:0; left:0; width:100%; height:65px; background-color:#efefef"></div>
-  
+  <section id="main-content">
   <ul class="videos">
     <li data-time="5:43">
       Video 1
@@ -192,6 +209,8 @@
       Video 58
     </li>
   </ul>
+  <div id="total-time"></div>
+  </section>
 <script>
   window.onload = function () {
     $.get("../nav.html", function (data) {
@@ -200,6 +219,7 @@
   }
   
   const timeNodes = document.querySelectorAll('[data-time]');
+  const totalTime = document.getElementById('total-time');
 
   const totalSeconds = Array.from(timeNodes)
   .map(node => node.dataset.time)
@@ -210,13 +230,16 @@
   .reduce((total, seconds) => total + seconds);
 
   let secondsLeft = totalSeconds;
-
-  const hours = Math.floor(secondsLeft / 3600);
+  
+  function addLeadingZero(num) {
+    return ('0' + num).slice(-2);
+  }
+  const hours = addLeadingZero(Math.floor(secondsLeft / 3600));
   secondsLeft %= 3600;
-  const minutes = Math.floor(secondsLeft / 60);
+  const minutes = addLeadingZero(Math.floor(secondsLeft / 60));
   secondsLeft %= 60;
 
-
+  totalTime.innerText = `Total time: ${hours}:${minutes}:${secondsLeft}`;
 </script>
 </body>
 </html>
