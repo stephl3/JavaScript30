@@ -11,6 +11,10 @@ html {
   background: #ffc600;
 }
 
+#main-content {
+  margin-top: 65px;
+}
+
 .photobooth {
   background: white;
   max-width: 150rem;
