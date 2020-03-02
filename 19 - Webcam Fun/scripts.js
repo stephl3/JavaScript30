@@ -1,8 +1,8 @@
-// window.onload = function () {
-//   $.get("../nav.html", function (data) {
-//     $("#nav-placeholder").html(data);
-//   })
-// }
+window.onload = function () {
+  $.get("../nav.html", function (data) {
+    $("#nav-placeholder").html(data);
+  })
+}
 
 const video = document.querySelector('.player');
 const canvas = document.querySelector('.photo');
