@@ -7,9 +7,10 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
-  <div id="nav-placeholder" style="position:fixed; top:0; left:0; width:100%; height:65px; background-color:#efefef">
+  <div id="nav-placeholder" style="position:fixed; z-index:3; top:0; left:0; width:100%; height:65px; background-color:#efefef">
   </div>
-  <div class="words" contenteditable>
+  <div id="main-content">
+    <div class="words" contenteditable></div>
   </div>
 
 <script>
@@ -24,14 +25,26 @@
   const recognition = new SpeechRecognition();
   recognition.interimResults = true;
 
-  let paragraph = document.createElement('p');
+  let newParagraph = document.createElement('p');
   const words = document.querySelector('.words');
-  words.appendChild(paragraph);
+  words.appendChild(newParagraph);
 
-  recognition.addEventListener('results', e => {
-    console.log(e);
+  recognition.addEventListener('result', e => {
+    const transcript = Array.from(e.results)
+    .map(result => result[0])
+    .map(result => result.transcript)
+    .join('')
+
+    newParagraph.textContent = transcript;
+    if (e.results[0].isFinal) {
+      newParagraph = document.createElement('p');
+      words.appendChild(newParagraph);
+    }
   })
 
+  recognition.addEventListener('end', recognition.start);
+
+  recognition.start();
 
 </script>
 
@@ -42,10 +55,14 @@
     }
 
     body {
-      background: #ffc600;
+      background: olivedrab;
       font-family: 'helvetica neue';
       font-weight: 200;
       font-size: 20px;
+    }
+
+    #main-content {
+      margin-top: 100px;
     }
 
     .words {
