@@ -18,7 +18,19 @@
       $("#nav-placeholder").html(data);
     })
   }
+
   window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+  const recognition = new SpeechRecognition();
+  recognition.interimResults = true;
+
+  let paragraph = document.createElement('p');
+  const words = document.querySelector('.words');
+  words.appendChild(paragraph);
+
+  recognition.addEventListener('results', e => {
+    console.log(e);
+  })
 
 
 </script>
