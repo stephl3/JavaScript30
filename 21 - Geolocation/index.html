@@ -86,6 +86,7 @@
       speed.textContent = data.coords.speed;
       arrow.style.transform = `rotate(${data.coords.heading}deg)`;
     }, err => {
+      // console.log(err);
       alert('Hey! You need to turn on location data!')
     });
   </script>
