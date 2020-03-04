@@ -67,6 +67,19 @@
         $("#nav-placeholder").html(data);
       })
     }
+
+    const arrow = document.querySelector('.arrow');
+    const speed = document.querySelector('.speed-value');
+
+    navigator.geolocation.watchPosition(data => {
+      // console.log(data);
+      speed.textContent = data.coords.speed;
+      arrow.style.transform = `rotate(${data.coords.heading}deg)`;
+    }, err => {
+      alert('Hey! You need to turn on location data!')
+    });
+
+
   </script>
 </body>
 </html>
