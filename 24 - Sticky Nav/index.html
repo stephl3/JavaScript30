@@ -70,7 +70,11 @@
 
   function fixNav() {
     if (navTop <= window.scrollY) {
-      
+      mainContent.style.paddingTop = nav.offsetHeight + 'px';
+      mainContent.classList.add('fixed-nav');
+    } else {
+      mainContent.style.paddingTop = 0;
+      mainContent.classList.remove('fixed-nav');
     }
   }
 

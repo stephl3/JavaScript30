@@ -10,7 +10,13 @@ body {
   margin: 0;
 }
 
-*, *:before, *:after {
+#main-content {
+  margin-top: 65px;
+}
+
+#main-content *,
+#main-content *:before,
+#main-content *:after {
   box-sizing: inherit;
 }
 
@@ -25,10 +31,14 @@ body {
   transition: transform 0.5s;
 }
 
+.fixed-nav .site-wrap {
+  transform: scale(1);
+}
+
 header {
   text-align: center;
-  height: 50vh;
-  background: url(http://wes.io/iEgP/wow-so-deep.jpg) bottom center no-repeat;
+  min-height: 80vh;
+  background: url(https://tldrmoviereviewsblog.files.wordpress.com/2019/09/your-name-banner.jpg) bottom center no-repeat;
   background-size: cover;
   display: flex;
   align-items: center;
@@ -48,6 +58,11 @@ nav {
   transition: all 0.5s;
   position: relative;
   z-index: 1;
+}
+
+.fixed-nav nav {
+  position: fixed;
+  box-shadow: 0 5px rgba(0,0,0,0.1);
 }
 
 nav ul {
@@ -72,6 +87,10 @@ li.logo {
   transition: all .5s;
   font-weight: 600;
   font-size: 30px;
+}
+
+.fixed-nav li.logo {
+  max-width: 500px;
 }
 
 li.logo a {
