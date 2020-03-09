@@ -31,7 +31,7 @@ body {
   transition: transform 0.5s;
 }
 
-.fixed-nav .site-wrap {
+#main-content.fixed-nav .site-wrap {
   transform: scale(1);
 }
 
@@ -90,7 +90,7 @@ body {
   font-size: 30px;
 }
 
-.fixed-nav li.logo {
+#main-content.fixed-nav li.logo {
   max-width: 500px;
 }
 
