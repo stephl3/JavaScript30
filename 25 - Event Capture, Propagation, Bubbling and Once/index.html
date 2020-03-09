@@ -9,25 +9,40 @@
 <body class="bod">
   <div id="nav-placeholder" style="position:fixed; top:0; left:0; width:100%; height:65px; background-color:#efefef">
   </div>
-  <div class="one">
-    <div class="two">
-      <div class="three">
+  <section id="main-content">
+    <div class="one">
+      <div class="two">
+        <div class="three">
+        </div>
       </div>
     </div>
-  </div>
-
+  </section>
+  
 <style>
   html {
     box-sizing: border-box;
   }
+
+  .bod {
+    margin: 0;
+  }
   
-  *, *:before, *:after { 
+  #main-content {
+    margin-top: 65px;
+    display: flex;
+
+  }
+  #main-content *,
+  #main-content *:before,
+  #main-content *:after { 
     box-sizing: inherit; 
   }
 
-  div {
+  #main-content div {
     width: 100%;
     padding: 100px;
+    display: flex;
+
   }
 
   .one {
@@ -51,6 +66,18 @@
     })
   }
 
+  const divs = document.getElementById('main-content').querySelectorAll('div');
+
+  function logText(e) {
+    console.log('Clicked', this.classList.value);;
+    e.stopPropagation();
+  }
+
+  divs.forEach(div => div.addEventListener('click', logText, {
+    
+    capture: false,
+    once: true
+  }));
 </script>
 </body>
 </html>
