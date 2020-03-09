@@ -35,7 +35,7 @@ body {
   transform: scale(1);
 }
 
-header {
+#main-content header {
   text-align: center;
   min-height: 80vh;
   background: url(https://tldrmoviereviewsblog.files.wordpress.com/2019/09/your-name-banner.jpg) bottom center no-repeat;
@@ -45,13 +45,13 @@ header {
   justify-content: center;
 }
 
-h1 {
+#main-content h1 {
   color: white;
   font-size: 7vw;
   text-shadow: 3px 4px 0 rgba(0,0,0,0.2);
 }
 
-nav {
+#main-content nav {
   background: black;
   top: 0;
   width: 100%;
@@ -60,19 +60,19 @@ nav {
   z-index: 1;
 }
 
-.fixed-nav nav {
+#main-content .fixed-nav nav {
   position: fixed;
   box-shadow: 0 5px rgba(0,0,0,0.1);
 }
 
-nav ul {
+#main-content nav ul {
   margin: 0;
   padding:0;
   list-style: none;
   display: flex;
 }
 
-nav li {
+#main-content nav li {
   flex: 1;
   text-align: center;
   display: flex;
@@ -80,7 +80,7 @@ nav li {
   align-items: center;
 }
 
-li.logo {
+#main-content li.logo {
   max-width: 0;
   overflow: hidden;
   background: white;
@@ -93,11 +93,11 @@ li.logo {
   max-width: 500px;
 }
 
-li.logo a {
+#main-content li.logo a {
   color: black;
 }
 
-nav a {
+#main-content nav a {
   text-decoration: none;
   padding: 20px;
   display: inline-block;
