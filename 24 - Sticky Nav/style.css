@@ -62,6 +62,7 @@ body {
 
 #main-content.fixed-nav nav {
   position: fixed;
+  top: 65px;
   box-shadow: 0 5px rgba(0,0,0,0.1);
 }
 
