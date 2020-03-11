@@ -4,7 +4,9 @@ html {
   background-size: cover;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
@@ -19,8 +21,8 @@ body {
 }
 
 .items {
-  height: 800px;
-  padding: 100px;
+  height: 500px;
+  padding: 80px;
   width: 100%;
   border: 1px solid white;
   overflow-x: scroll;
