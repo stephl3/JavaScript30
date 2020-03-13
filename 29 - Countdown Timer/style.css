@@ -5,7 +5,9 @@ html {
   background: linear-gradient(45deg,  #42a5f5 0%,#478ed1 50%,#0d47a1 100%);
 }
 
-*, *:before, *:after {
+#main-content *,
+#main-content *:before,
+#main-content *:after {
   box-sizing: inherit;
 }
 
@@ -15,7 +17,11 @@ body {
   font-family: 'Inconsolata', monospace;
 }
 
-.display__time-left {
+#main-content {
+  margin-top: 65px;
+}
+
+#main-content .display__time-left {
   font-weight: 100;
   font-size: 20rem;
   margin: 0;
@@ -23,32 +29,32 @@ body {
   text-shadow: 4px 4px 0 rgba(0,0,0,0.05);
 }
 
-.timer {
+#main-content .timer {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
 }
 
-.timer__controls {
+#main-content .timer__controls {
   display: flex;
 }
 
-.timer__controls > * {
+#main-content .timer__controls > * {
   flex: 1;
 }
 
-.timer__controls form {
+#main-content .timer__controls form {
   flex: 1;
   display: flex;
 }
 
-.timer__controls input {
+#main-content .timer__controls input {
   flex: 1;
   border: 0;
   padding: 2rem;
 }
 
-.timer__button {
+#main-content .timer__button {
   background: none;
   border: 0;
   cursor: pointer;
@@ -62,13 +68,13 @@ body {
   font-family: 'Inconsolata', monospace;
 }
 
-.timer__button:hover,
-.timer__button:focus {
+#main-content .timer__button:hover,
+#main-content .timer__button:focus {
   background: rgba(0,0,0,0.2);
   outline: 0;
 }
 
-.display {
+#main-content .display {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -76,7 +82,7 @@ body {
   justify-content: center;
 }
 
-.display__end-time {
+#main-content .display__end-time {
   font-size: 4rem;
   color: white;
 }
