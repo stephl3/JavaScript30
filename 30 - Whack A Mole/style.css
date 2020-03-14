@@ -4,7 +4,9 @@ html {
   background: #ffc600;
 }
 
-*, *:before, *:after {
+#main-content *,
+#main-content *:before,
+#main-content *:after {
   box-sizing: inherit;
 }
 
@@ -14,21 +16,25 @@ body {
   font-family: 'Amatic SC', cursive;
 }
 
-h1 {
+#main-content {
+  margin-top: 65px;
+}
+
+#main-content h1 {
   text-align: center;
   font-size: 10rem;
   line-height: 1;
   margin-bottom: 0;
 }
 
-.score {
+#main-content .score {
   background: rgba(255,255,255,0.2);
   padding: 0 3rem;
   line-height: 1;
   border-radius: 1rem;
 }
 
-.game {
+#main-content .game {
   width: 600px;
   height: 400px;
   display: flex;
@@ -36,13 +42,13 @@ h1 {
   margin: 0 auto;
 }
 
-.hole {
+#main-content .hole {
   flex: 1 0 33.33%;
   overflow: hidden;
   position: relative;
 }
 
-.hole:after {
+#main-content .hole:after {
   display: block;
   background: url(dirt.svg) bottom center no-repeat;
   background-size: contain;
@@ -54,7 +60,7 @@ h1 {
   bottom: -30px;
 }
 
-.mole {
+#main-content .mole {
   background: url('mole.svg') bottom center no-repeat;
   background-size: 60%;
   position: absolute;
@@ -64,6 +70,6 @@ h1 {
   transition:all 0.4s;
 }
 
-.hole.up .mole {
+#main-content .hole.up .mole {
   top: 0;
 }
