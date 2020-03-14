@@ -18,6 +18,10 @@ body {
 
 #main-content {
   margin-top: 65px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 #main-content h1 {
@@ -34,7 +38,12 @@ body {
   border-radius: 1rem;
 }
 
+#main-content button {
+  cursor: pointer;
+}
+
 #main-content .game {
+  cursor: crosshair;
   width: 600px;
   height: 400px;
   display: flex;
