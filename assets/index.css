@@ -202,6 +202,18 @@ a {
   background: transparent;
 }
 
+.sprite {
+  background-image: url(spritesheet.png);
+  background-repeat: no-repeat;
+  display: block;
+}
+
+.sprite-01 {
+  height: 1578px;
+  width: auto;
+  background-position: -5px -5px;
+}
+
 .overlay {
   position: absolute;
   width: 100%;
