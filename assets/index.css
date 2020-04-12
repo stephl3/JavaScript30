@@ -206,6 +206,7 @@ a {
   background-image: url(spritesheet.png);
   background-repeat: no-repeat;
   display: block;
+  position: absolute;
 }
 
 .sprite-01 {
@@ -213,6 +214,7 @@ a {
   width: auto;
   background-position: -5px -5px;
 }
+
 
 .overlay {
   position: absolute;
@@ -236,7 +238,7 @@ a {
   opacity: 1;
 }
 
-.overlay div {
+.overlay .text {
   font-size: 12px;
   font-weight: 700;
   color: white;
